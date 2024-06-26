@@ -81,6 +81,7 @@
                                        win:AutomationProperties.HelpText="{TemplateBinding AutomationProperties.HelpText}"
                                        win:AutomationProperties.Name="{TemplateBinding AutomationProperties.Name}"
                                        CornerRadius="{TemplateBinding CornerRadius}"
+                                       ExpandDirection="{Binding ExpandDirection, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                        IsExpanded="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                        Style="{StaticResource SettingsExpanderExpanderStyle}">
                             <muxc:Expander.Header>

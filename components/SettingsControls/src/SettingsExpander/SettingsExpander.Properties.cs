@@ -72,7 +72,16 @@ public partial class SettingsExpander
      new PropertyMetadata(defaultValue: false, (d, e) => ((SettingsExpander)d).OnIsExpandedPropertyChanged((bool)e.OldValue, (bool)e.NewValue)));
 
     /// <summary>
-    /// 
+    /// The backing <see cref="DependencyProperty"/> for the <see cref="ExpandDirection"/> property.
+    /// </summary>
+    public static readonly DependencyProperty ExpandDirectionProperty = DependencyProperty.Register(
+        nameof(ExpandDirection),
+        typeof(MUXC.ExpandDirection),
+        typeof(SettingsExpander),
+        new PropertyMetadata(defaultValue: MUXC.ExpandDirection.Down));
+
+    /// <summary>
+    ///
     /// <summary>
     /// Gets or sets the Header.
     /// </summary>
@@ -137,6 +146,16 @@ public partial class SettingsExpander
         get => (bool)GetValue(IsExpandedProperty);
         set => SetValue(IsExpandedProperty, value);
     }
+
+    /// <summary>
+    /// Gets or sets the ExpandDirection.
+    /// </summary>
+    public MUXC.ExpandDirection ExpandDirection
+    {
+        get => (MUXC.ExpandDirection)GetValue(ExpandDirectionProperty);
+        set => SetValue(ExpandDirectionProperty, value);
+    }
+
     protected virtual void OnIsExpandedPropertyChanged(bool oldValue, bool newValue)
     {
         OnIsExpandedChanged(oldValue, newValue);
